@@ -4,60 +4,366 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rix Interactive</title>
-
+  <meta
+    name="description"
+    content="Rix Interactive builds intelligent systems through story and play. Creators of Chronicles: The Learning Rift."
+  />
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0b0f1a, #05070d);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
+    :root {
+      --bg-1: #05070d;
+      --bg-2: #0b1220;
+      --panel: rgba(10, 18, 32, 0.72);
+      --text: #eef4ff;
+      --muted: #a9b8d0;
+      --accent: #39c6ff;
+      --accent-soft: rgba(57, 198, 255, 0.18);
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --max: 1180px;
     }
 
-    .container {
-      max-width: 700px;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top center, rgba(57, 198, 255, 0.18), transparent 28%),
+        linear-gradient(180deg, var(--bg-2), var(--bg-1));
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
+      margin: 0 0 18px;
+      font-size: clamp(2.6rem, 6vw, 4.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.03em;
     }
 
-    .tagline {
-      font-size: 1.3rem;
-      opacity: 0.8;
-      margin-bottom: 20px;
+    .hero p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
+      max-width: 640px;
     }
 
-    .product {
-      margin-top: 20px;
-      font-size: 1rem;
-      opacity: 0.7;
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 26px;
     }
 
-    .highlight {
-      color: #00d4ff;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      border: 1px solid var(--border);
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #1fc5ff, #0ea5e9);
+      color: #03111a;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+    }
+
+    .hero-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-card-body {
+      padding: 18px 18px 20px;
+    }
+
+    .hero-card-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .hero-card-copy {
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: 0.96rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 1.6rem;
+    }
+
+    .section-copy {
+      margin: 0 0 8px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 760px;
+    }
+
+    .footer {
+      margin-top: 54px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 20px 16px 48px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <h1>Rix Interactive</h1>
+  <div class="page">
+    <header class="nav">
+      <div class="brand">
+        <div class="brand-name">Rix Interactive</div>
+        <div class="brand-sub">Intelligent systems through story and play</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#chronicles">Chronicles</a>
+        <a href="#about">About</a>
+        <a href="mailto:hello@rixinteractive.com">Contact</a>
+      </nav>
+    </header>
 
-    <div class="tagline">
-      Building intelligent systems<br />
-      through story and play.
-    </div>
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Coming Soon</div>
+          <h1>Building intelligent systems through story and play.</h1>
+          <p>
+            Rix Interactive is creating narrative-driven interactive experiences that blend
+            science fiction, systems thinking, and meaningful player decision-making.
+          </p>
+          <p>
+            Our first project is <span class="accent">Chronicles: The Learning Rift</span> —
+            a connected sci-fi universe spanning a novel and an interactive learning experience.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#chronicles">Explore Chronicles</a>
+            <a class="btn btn-secondary" href="mailto:hello@rixinteractive.com">Contact</a>
+          </div>
+        </div>
 
-    <div class="product">
-      Creators of <span class="highlight">Chronicles: The Learning Rift</span>
-    </div>
+        <div class="hero-card">
+          <img src="cover.png" alt="Chronicles: The Learning Rift cover" />
+          <div class="hero-card-body">
+            <div class="hero-card-title">Featured Project</div>
+            <div class="hero-card-copy">
+              <strong>Chronicles: The Learning Rift</strong><br />
+              A cinematic sci-fi story and interactive experience set in a collapsing world of systems,
+              infrastructure, and restoration.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="chronicles">
+        <h2 class="section-title">Chronicles</h2>
+        <p class="section-copy">
+          In the world of Chronicles, broken infrastructure is more than a backdrop — it is the battlefield.
+          Systems become places. Failures become ruptures. Repair becomes survival.
+        </p>
+        <div class="grid">
+          <div class="panel">
+            <h2>The Novel</h2>
+            <p>
+              <strong>Chronicles: The Learning Rift</strong> by <strong>J. C. Rix</strong> is a cinematic
+              science fiction novel about collapse, restoration, and learning to think inside complex systems.
+            </p>
+          </div>
+          <div class="panel">
+            <h2>The Interactive Experience</h2>
+            <p>
+              An incident-driven learning game where players step into failing systems, interpret signals,
+              make critical decisions, and restore stability under pressure.
+            </p>
+          </div>
+          <div class="panel">
+            <h2>The Vision</h2>
+            <p>
+              Rix Interactive is building a long-term universe where storytelling, systems, and play reinforce
+              each other without losing the integrity of either medium.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top: 52px;">
+        <h2 class="section-title">About Rix Interactive</h2>
+        <p class="section-copy">
+          Rix Interactive creates original worlds and intelligent interactive experiences with a focus on
+          atmosphere, decision-making, and systems-driven storytelling.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>© 2026 Rix Interactive</div>
+      <div>Created by <span class="accent">J. C. Rix</span></div>
+    </footer>
   </div>
 </body>
 </html>
