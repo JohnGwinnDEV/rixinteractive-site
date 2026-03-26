@@ -13,6 +13,7 @@
       --bg-1: #05070d;
       --bg-2: #0b1220;
       --panel: rgba(10, 18, 32, 0.72);
+      --panel-2: rgba(255, 255, 255, 0.04);
       --text: #eef4ff;
       --muted: #a9b8d0;
       --accent: #39c6ff;
@@ -82,6 +83,7 @@
       gap: 18px;
       color: var(--muted);
       font-size: 0.95rem;
+      flex-wrap: wrap;
     }
 
     .hero {
@@ -89,7 +91,7 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 40px;
       align-items: center;
-      margin-bottom: 56px;
+      margin-bottom: 64px;
     }
 
     .eyebrow {
@@ -155,6 +157,12 @@
       color: var(--text);
     }
 
+    .launch-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
     .hero-card {
       background: var(--panel);
       border: 1px solid var(--border);
@@ -189,6 +197,22 @@
       font-size: 0.96rem;
     }
 
+    section {
+      margin-top: 56px;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: 1.75rem;
+    }
+
+    .section-copy {
+      margin: 0 0 18px;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 760px;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -196,17 +220,24 @@
       margin-top: 18px;
     }
 
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 18px;
+    }
+
     .panel {
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--panel-2);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 22px;
       box-shadow: var(--shadow);
     }
 
-    .panel h2 {
+    .panel h2,
+    .panel h3 {
       margin: 0 0 10px;
-      font-size: 1.12rem;
     }
 
     .panel p {
@@ -216,20 +247,28 @@
       font-size: 0.98rem;
     }
 
-    .section-title {
-      margin: 0 0 12px;
-      font-size: 1.6rem;
+    .kicker {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .section-copy {
-      margin: 0 0 8px;
+    .bullet-list {
+      margin: 14px 0 0;
+      padding-left: 18px;
       color: var(--muted);
       line-height: 1.7;
-      max-width: 760px;
+    }
+
+    .bullet-list li {
+      margin-bottom: 8px;
     }
 
     .footer {
-      margin-top: 54px;
+      margin-top: 58px;
       padding-top: 24px;
       border-top: 1px solid var(--border);
       display: flex;
@@ -245,10 +284,8 @@
     }
 
     @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
+      .hero,
+      .two-col,
       .grid {
         grid-template-columns: 1fr;
       }
@@ -262,10 +299,6 @@
     @media (max-width: 640px) {
       .page {
         padding: 20px 16px 48px;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
       }
 
       .hero p {
@@ -283,8 +316,9 @@
       </div>
       <nav class="nav-links">
         <a href="#chronicles">Chronicles</a>
+        <a href="#book">Book</a>
+        <a href="#game">Game</a>
         <a href="#about">About</a>
-        <a href="mailto:hello@rixinteractive.com">Contact</a>
       </nav>
     </header>
 
@@ -292,23 +326,20 @@
       <section class="hero">
         <div>
           <div class="eyebrow">Coming Soon</div>
-          <h1>Engineering intelligence through story and play.</h1>
+          <h1>Building intelligent systems through story and play.</h1>
           <p>
-            Rix Interactive is creating narrative-driven interactive experiences that blend
-            science fiction, systems thinking, and meaningful player decision-making.
+            Rix Interactive creates narrative-driven interactive experiences that blend
+            science fiction, systems thinking, and meaningful decision-making.
           </p>
           <p>
             Our first project is <span class="accent">Chronicles: The Learning Rift</span> —
-            a connected sci-fi universe spanning a novel and an interactive learning experience.
-            
+            a connected sci-fi universe spanning a novel and an interactive experience.
           </p>
-          <p style="margin-top: 18px; color: #a9b8d0;">
-          Launching 2026 — Book + Interactive Experience
-           </p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#chronicles">Explore Chronicles</a>
-            <a class="btn btn-secondary" href="mailto:jgwinndev@gmail.com">Contact</a>
+            <a class="btn btn-primary" href="#book">Explore the Book</a>
+            <a class="btn btn-secondary" href="#game">Explore the Game</a>
           </div>
+          <div class="launch-note">Launching 2026 — Book + Interactive Experience</div>
         </div>
 
         <div class="hero-card">
@@ -319,7 +350,6 @@
               <strong>Chronicles: The Learning Rift</strong><br />
               A cinematic sci-fi story and interactive experience set in a collapsing world of systems,
               infrastructure, and restoration.
-              
             </div>
           </div>
         </div>
@@ -328,39 +358,118 @@
       <section id="chronicles">
         <h2 class="section-title">Chronicles</h2>
         <p class="section-copy">
-          In the world of Chronicles, broken infrastructure is more than a backdrop — it is the battlefield.
+          In Chronicles, broken infrastructure is more than a backdrop — it is the battlefield.
           Systems become places. Failures become ruptures. Repair becomes survival.
         </p>
+
         <div class="grid">
           <div class="panel">
-            <h2>The Novel</h2>
+            <div class="kicker">Universe</div>
+            <h3>Systems made physical</h3>
             <p>
-              <strong>Chronicles: The Learning Rift</strong> by <strong>J. C. Rix</strong> is a cinematic
-              science fiction novel about collapse, restoration, and learning to think inside complex systems.
+              Pipelines, artifacts, deployment chains, and failures become living structures inside
+              a collapsing digital world.
             </p>
           </div>
           <div class="panel">
-            <h2>The Interactive Experience</h2>
+            <div class="kicker">Conflict</div>
+            <h3>Collapse and restoration</h3>
             <p>
-              An incident-driven learning game where players step into failing systems, interpret signals,
-              make critical decisions, and restore stability under pressure.
+              The central struggle is not only against corruption and hostile forces, but against the
+              unraveling of the system itself.
             </p>
           </div>
           <div class="panel">
-            <h2>The Vision</h2>
+            <div class="kicker">Vision</div>
+            <h3>Story and interaction aligned</h3>
             <p>
-              Rix Interactive is building a long-term universe where storytelling, systems, and play reinforce
-              each other without losing the integrity of either medium.
+              The novel and the game stand on their own while reinforcing the same core idea:
+              learning to think inside complex systems.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="about" style="margin-top: 52px;">
+      <section id="book">
+        <h2 class="section-title">The Book</h2>
+        <p class="section-copy">
+          <strong>Chronicles: The Learning Rift</strong> by <strong>J. C. Rix</strong> is a cinematic
+          science fiction novel set in a world where collapsing infrastructure and digital systems
+          shape the fate of the real world.
+        </p>
+
+        <div class="two-col">
+          <div class="panel">
+            <div class="kicker">Novel</div>
+            <h3>A world in collapse</h3>
+            <p>
+              Nathan Hale, a practical man with a systems mechanic’s instincts, is pulled into a
+              fractured universe where repair, survival, and understanding are inseparable.
+            </p>
+            <ul class="bullet-list">
+              <li>Cinematic sci-fi atmosphere</li>
+              <li>Systems-driven worldbuilding</li>
+              <li>High-stakes collapse and restoration</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="kicker">Status</div>
+            <h3>In final polish</h3>
+            <p>
+              The manuscript is complete and moving through final refinement for release preparation.
+            </p>
+            <ul class="bullet-list">
+              <li>Draft complete</li>
+              <li>Cover in development</li>
+              <li>Publishing preparation underway</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="game">
+        <h2 class="section-title">The Game</h2>
+        <p class="section-copy">
+          The Chronicles interactive experience places players inside failing systems where they must
+          interpret signals, make critical decisions, and restore stability under pressure.
+        </p>
+
+        <div class="two-col">
+          <div class="panel">
+            <div class="kicker">Interactive Experience</div>
+            <h3>Incident-driven system restoration</h3>
+            <p>
+              Players step into connected mission scenarios built around shared incidents, where
+              understanding flow, diagnosing evidence, and choosing the best next move all matter.
+            </p>
+            <ul class="bullet-list">
+              <li>Adaptive mission generation</li>
+              <li>Decision-driven gameplay</li>
+              <li>Systems-thinking under pressure</li>
+            </ul>
+          </div>
+
+          <div class="panel">
+            <div class="kicker">Status</div>
+            <h3>In active development</h3>
+            <p>
+              The core mission system is functional and evolving toward a polished, immersive learning experience.
+            </p>
+            <ul class="bullet-list">
+              <li>Playable vertical slice complete</li>
+              <li>Shared mission context implemented</li>
+              <li>Frontend polish in progress</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
         <h2 class="section-title">About Rix Interactive</h2>
         <p class="section-copy">
-          Rix Interactive creates original worlds and intelligent interactive experiences with a focus on
-          atmosphere, decision-making, and systems-driven storytelling.
+          Rix Interactive is an independent studio focused on building immersive, systems-driven worlds
+          that blend narrative, intelligent interaction, and meaningful decision-making.
         </p>
       </section>
     </main>
