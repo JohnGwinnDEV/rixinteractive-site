@@ -1,513 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rix Interactive</title>
-  <meta
-    name="description"
-    content="Rix Interactive builds intelligent systems through story and play. Creators of Chronicles: The Learning Rift."
-  />
-  <style>
-    :root {
-      --bg-1: #05070d;
-      --bg-2: #0b1220;
-      --panel: rgba(10, 18, 32, 0.72);
-      --panel-2: rgba(255, 255, 255, 0.04);
-      --text: #eef4ff;
-      --muted: #a9b8d0;
-      --accent: #39c6ff;
-      --accent-soft: rgba(57, 198, 255, 0.18);
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top center, rgba(57, 198, 255, 0.18), transparent 28%),
-        linear-gradient(180deg, var(--bg-2), var(--bg-1));
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: 28px 20px 64px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 48px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .brand-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .brand-sub {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      flex-wrap: wrap;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 64px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      background: var(--accent-soft);
-      border-radius: 999px;
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.6rem, 6vw, 4.8rem);
-      line-height: 0.96;
-      letter-spacing: -0.03em;
-    }
-
-    .hero p {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.65;
-      max-width: 640px;
-    }
-
-    .cta-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-      border: 1px solid var(--border);
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(180deg, #1fc5ff, #0ea5e9);
-      color: #03111a;
-      border-color: transparent;
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .launch-note {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .hero-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    .hero-card-body {
-      padding: 18px 18px 20px;
-    }
-
-    .hero-card-title {
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .hero-card-copy {
-      color: var(--muted);
-      line-height: 1.5;
-      font-size: 0.96rem;
-    }
-
-    section {
-      margin-top: 56px;
-    }
-
-    .section-title {
-      margin: 0 0 12px;
-      font-size: 1.75rem;
-    }
-
-    .section-copy {
-      margin: 0 0 18px;
-      color: var(--muted);
-      line-height: 1.7;
-      max-width: 760px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-      margin-top: 18px;
-    }
-
-    .panel {
-      background: var(--panel-2);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-
-    .panel h2,
-    .panel h3 {
-      margin: 0 0 10px;
-    }
-
-    .panel p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 0.98rem;
-    }
-
-    .kicker {
-      color: var(--accent);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .bullet-list {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .bullet-list li {
-      margin-bottom: 8px;
-    }
-
-    .footer {
-      margin-top: 58px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .accent {
-      color: var(--accent);
-    }
-
-    @media (max-width: 920px) {
-      .hero,
-      .two-col,
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .page {
-        padding: 20px 16px 48px;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <header class="nav">
-      <div class="brand">
-        <div class="brand-name">Rix Interactive</div>
-        <div class="brand-sub">Intelligent systems through story and play</div>
-      </div>
-      <nav class="nav-links">
-        <a href="#chronicles">Chronicles</a>
-        <a href="#book">Book</a>
-        <a href="#game">Game</a>
-        <a href="#about">About</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div>
-          <div class="eyebrow">Now Available</div>
-          <h1>Chronicles: The Learning Rift</h1>
-          <p> What happens when the systems that run the world don’t crash… but slowly begin to fail?
-          </p>
-
-           <p>A grounded sci-fi story about system failure, recovery, and survival.
-        </p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://a.co/d/0fxorht7" target="_blank">
-                    Buy on Amazon →
-              </a>
-            <a class="btn btn-secondary" href="#game">Explore the Game</a>
-            
-          </div>
-          <p style="margin-top:18px; color: var(--muted); font-size:0.95rem;">
-                Early readers: "A unique take on systems and failure — feels real."
-            </p>
-          <div class="launch-note">Now available on Amazon</div>
-        </div>
-          
-
-        <div class="hero-card">
-          <img src="cover.png" alt="Chronicles: The Learning Rift cover" />
-          <div class="hero-card-body">
-            <div class="hero-card-title">Featured Project</div>
-            <div class="hero-card-copy">
-              <strong>Chronicles: The Learning Rift</strong><br />
-              A cinematic sci-fi story and interactive experience set in a collapsing world of systems,
-              infrastructure, and restoration.
-            </div>
-          </div>
-        </div>
-      </section>
-       <section>
-    <h2 class="section-title">A System Failure Begins</h2>
-      <p class="section-copy">
-    The first failure did not announce itself. It entered the system as a delay.
-    0.002 seconds—inside the Core.
-  </p>
-  <p class="section-copy">
-    The pipeline advanced. The system transitioned. The next instruction never came.
-  </p>
-
-  <a class="btn btn-secondary" href="https://a.co/d/0fxorht7" target="_blank">
-    Read More on Amazon
-  </a>
-</section>
-          <section>
-  <h2 class="section-title">Who This Is For</h2>
-
-  <ul class="bullet-list">
-    <li>Readers who enjoy grounded, intelligent sci-fi</li>
-    <li>Engineers, developers, and problem-solvers</li>
-    <li>Anyone interested in systems, failure, and recovery</li>
-  </ul>
-</section>
-      <section id="chronicles">
-        <h2 class="section-title">Chronicles</h2>
-        <p class="section-copy">
-        <strong>Chronicles: The Learning Rift</strong> by <strong>J. C. Rix</strong> is a cinematic
-           science fiction novel about collapse, restoration, and learning how to think when everything is breaking.
-         </p>
-
-        <div class="grid">
-          <div class="panel">
-            <div class="kicker">Universe</div>
-            <h3>Systems made physical</h3>
-            <p>
-              Pipelines, artifacts, deployment chains, and failures become living structures inside
-              a collapsing digital world.
-            </p>
-          </div>
-          <div class="panel">
-            <div class="kicker">Conflict</div>
-            <h3>Collapse and restoration</h3>
-            <p>
-              The central struggle is not only against corruption and hostile forces, but against the
-              unraveling of the system itself.
-            </p>
-          </div>
-          <div class="panel">
-            <div class="kicker">Vision</div>
-            <h3>Story and interaction aligned</h3>
-            <p>
-              The novel and the game stand on their own while reinforcing the same core idea:
-              learning to think inside complex systems.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="book">
-        <h2 class="section-title">The Book</h2>
-        <p class="section-copy">
-          <strong>Chronicles: The Learning Rift</strong> by <strong>J. C. Rix</strong> is a cinematic
-          science fiction novel set in a world where collapsing infrastructure and digital systems
-          shape the fate of the real world.
-        </p>
-
-        <div class="two-col">
-         <div class="panel">
-             <div class="kicker">Novel</div>
-               <h3>A world in collapse</h3>
-               <p>
-                 The system collapsed. Cities went dark. Networks failed. Billions died.
-                 Nathan Hale, a former plumber trying to survive the ruins, discovers a hidden facility
-                 and a system that still exists — not as a machine, but as a living world of infrastructure,
-                 failure, and impossible scale.
-                </p>
-             <ul class="bullet-list">
-             <li>Cinematic sci-fi atmosphere</li>
-             <li>Systems-driven worldbuilding</li>
-             <li>A grounded protagonist facing impossible stakes</li>
-             </ul>
-          </div>
-
-          <div class="panel">
-            <div class="kicker">Status</div>
-            <h3>Now Available</h3>
-            <p>Chronicles: The Learning Rift is now live and available on Amazon.
-            </p>
-            <ul class="bullet-list">
-            <li>Published on Kindle</li>
-            <li>First release available now</li>
-            <li>Expanding into a full interactive experience</li>
-            </ul>
-            <a class="btn btn-primary" href="https://a.co/d/0fxorht7" target="_blank">
-              Buy on Amazon →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="game">
-        <h2 class="section-title">The Game</h2>
-        <p class="section-copy">
-          The Chronicles interactive experience places players inside failing systems where they must
-          interpret signals, make critical decisions, and restore stability under pressure.
-        </p>
-
-        <div class="two-col">
-          <div class="panel">
-            <div class="kicker">Interactive Experience</div>
-            <h3>Incident-driven system restoration</h3>
-            <p>
-              Players step into connected mission scenarios built around shared incidents, where
-              understanding flow, diagnosing evidence, and choosing the best next move all matter.
-            </p>
-            <ul class="bullet-list">
-              <li>Adaptive mission generation</li>
-              <li>Decision-driven gameplay</li>
-              <li>Systems-thinking under pressure</li>
-            </ul>
-          </div>
-
-          <div class="panel">
-            <div class="kicker">Status</div>
-            <h3>Coming Next</h3>
-            <p>
-              The Chronicles interactive experience is currently in development and will allow players to step inside failing systems and make critical decisions in real time.
-            </p>
-            <ul class="bullet-list">
-              <li>Playable vertical slice complete</li>
-              <li>Shared mission context implemented</li>
-              <li>Frontend polish in progress</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <h2 class="section-title">About Rix Interactive</h2>
-        <p class="section-copy">
-          Rix Interactive is an independent studio focused on building immersive, systems-driven worlds
-          that blend narrative, intelligent interaction, and meaningful decision-making.
-        </p>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div>© 2026 Rix Interactive</div>
-      <div>Created by <span class="accent">J. C. Rix</span></div>
-    </footer>
-  </div>
-</body>
-</html>
+RIX INTERACTIVE
+Stories, worlds, and intelligent systems
+Books
+Projects
+J. C. Rix
+Contact
+NOW AVAILABLE
+Awakening Ley Lines
+An ancient vault. A forgotten civilization. A discovery that will reshape humanity forever.
+J. C. Rix’s debut novel blends science fiction, epic fantasy, ancient mysteries, extraordinary technology, and the resilience of the human spirit.
+Read on Amazon → Explore the World
+Available in Kindle Unlimited, Kindle, and paperback.
+￼
+FEATURED RELEASE
+Awakening Ley Lines
+Book One of the Awakening Ley Lines Chronicles.
+Enter a World Beneath the Ice
+Richard Graye never expected his greatest discovery to be waiting beneath the ice. What he finds challenges everything humanity believes about its past, its future, and the forces hidden beneath the world itself.
+MYSTERY
+A forgotten vault
+Ancient machinery and buried truths awaken after an impossible discovery.
+TRANSFORMATION
+Power has a price
+Richard’s body, identity, and purpose are altered by forces he does not yet understand.
+ADVENTURE
+Science becomes myth
+Technology, ley lines, hidden civilizations, and extraordinary beings collide.
+Books & Projects
+Rix Interactive brings together original fiction, interactive experiences, and emerging cognitive systems.
+￼
+PUBLISHED NOVEL
+Awakening Ley Lines
+Meet Richard Graye, Bramdur, Sam, and the technologies and mysteries that define the Awakening Ley Lines universe.
+Visit the Book Page →
+￼
+IN DEVELOPMENT
+Chronicles: The Learning Rift
+A grounded science-fiction story and interactive experience about system failure, survival, restoration, and learning to think inside complex systems.
+Project Overview
+Chronicles: The Learning Rift
+What happens when the systems that run the world do not crash all at once, but slowly begin to fail? Chronicles explores collapse and recovery through a cinematic science-fiction story and an evolving interactive experience.
+UNIVERSE
+Systems made physical
+Pipelines, artifacts, deployment chains, and failures become living structures inside a collapsing world.
+CONFLICT
+Collapse and restoration
+The struggle is not only against hostile forces, but against the unraveling of the system itself.
+EXPERIENCE
+Story and interaction aligned
+The novel and game reinforce the same core idea: learning to reason inside complex systems.
+THE AUTHOR
+Meet J. C. Rix
+J. C. Rix is an author, technology architect, and creator of immersive worlds where science, mythology, systems, and imagination collide. His work spans original fiction, interactive experiences, and next-generation cognitive architectures.
+CONNECT
+Follow the journey
+Instagram: @JCRixAuthor
+Awakening Ley Lines on Amazon
+jcrixauthor@gmail.com
+© 2026 Rix Interactive
+Created by J. C. Rix
