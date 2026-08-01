@@ -1,60 +1,945 @@
-RIX INTERACTIVE
-Stories, worlds, and intelligent systems
-Books
-Projects
-J. C. Rix
-Contact
-NOW AVAILABLE
-Awakening Ley Lines
-An ancient vault. A forgotten civilization. A discovery that will reshape humanity forever.
-J. C. Rix’s debut novel blends science fiction, epic fantasy, ancient mysteries, extraordinary technology, and the resilience of the human spirit.
-Read on Amazon → Explore the World
-Available in Kindle Unlimited, Kindle, and paperback.
-￼
-FEATURED RELEASE
-Awakening Ley Lines
-Book One of the Awakening Ley Lines Chronicles.
-Enter a World Beneath the Ice
-Richard Graye never expected his greatest discovery to be waiting beneath the ice. What he finds challenges everything humanity believes about its past, its future, and the forces hidden beneath the world itself.
-MYSTERY
-A forgotten vault
-Ancient machinery and buried truths awaken after an impossible discovery.
-TRANSFORMATION
-Power has a price
-Richard’s body, identity, and purpose are altered by forces he does not yet understand.
-ADVENTURE
-Science becomes myth
-Technology, ley lines, hidden civilizations, and extraordinary beings collide.
-Books & Projects
-Rix Interactive brings together original fiction, interactive experiences, and emerging cognitive systems.
-￼
-PUBLISHED NOVEL
-Awakening Ley Lines
-Meet Richard Graye, Bramdur, Sam, and the technologies and mysteries that define the Awakening Ley Lines universe.
-Visit the Book Page →
-￼
-IN DEVELOPMENT
-Chronicles: The Learning Rift
-A grounded science-fiction story and interactive experience about system failure, survival, restoration, and learning to think inside complex systems.
-Project Overview
-Chronicles: The Learning Rift
-What happens when the systems that run the world do not crash all at once, but slowly begin to fail? Chronicles explores collapse and recovery through a cinematic science-fiction story and an evolving interactive experience.
-UNIVERSE
-Systems made physical
-Pipelines, artifacts, deployment chains, and failures become living structures inside a collapsing world.
-CONFLICT
-Collapse and restoration
-The struggle is not only against hostile forces, but against the unraveling of the system itself.
-EXPERIENCE
-Story and interaction aligned
-The novel and game reinforce the same core idea: learning to reason inside complex systems.
-THE AUTHOR
-Meet J. C. Rix
-J. C. Rix is an author, technology architect, and creator of immersive worlds where science, mythology, systems, and imagination collide. His work spans original fiction, interactive experiences, and next-generation cognitive architectures.
-CONNECT
-Follow the journey
-Instagram: @JCRixAuthor
-Awakening Ley Lines on Amazon
-jcrixauthor@gmail.com
-© 2026 Rix Interactive
-Created by J. C. Rix
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rix Interactive | Books, Worlds, and Intelligent Systems</title>
+
+  <meta
+    name="description"
+    content="Rix Interactive is the creative studio of J. C. Rix, author of Awakening Ley Lines and creator of Chronicles: The Learning Rift and the LYRA cognitive architecture."
+  />
+
+  <meta property="og:title" content="Rix Interactive | J. C. Rix" />
+
+  <meta
+    property="og:description"
+    content="Explore Awakening Ley Lines, Chronicles: The Learning Rift, and the LYRA cognitive architecture."
+  />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rixinteractive.com/" />
+
+  <meta
+    property="og:image"
+    content="https://rixinteractive.com/AwakeningLeyLines.png"
+  />
+
+  <style>
+    :root {
+      --bg-1: #05070d;
+      --bg-2: #0b1220;
+      --panel: rgba(10, 18, 32, 0.76);
+      --panel-2: rgba(255, 255, 255, 0.045);
+      --text: #eef4ff;
+      --muted: #a9b8d0;
+      --accent: #39c6ff;
+      --accent-2: #8be2ff;
+      --accent-soft: rgba(57, 198, 255, 0.16);
+      --border: rgba(255, 255, 255, 0.12);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(57, 198, 255, 0.18),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 22%,
+          rgba(69, 111, 255, 0.12),
+          transparent 24%
+        ),
+        linear-gradient(180deg, var(--bg-2), var(--bg-1));
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    /* Navigation */
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 54px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-name {
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 74px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 0.93;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-title-small {
+      display: block;
+      margin-top: 8px;
+      color: var(--accent-2);
+      font-size: 0.36em;
+      line-height: 1.15;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.68;
+    }
+
+    .hero-hook {
+      color: var(--text) !important;
+      font-size: 1.22rem !important;
+      font-weight: 700;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* Buttons */
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-weight: 800;
+
+      transition:
+        transform 0.15s ease,
+        border-color 0.15s ease,
+        background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: linear-gradient(180deg, #27c9ff, #0ea5e9);
+      color: #03111a;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--text);
+    }
+
+    /* Featured book card */
+
+    .hero-card {
+      max-width: 510px;
+      justify-self: end;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-cover-wrap {
+      padding: 22px;
+
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(57, 198, 255, 0.18),
+          transparent 38%
+        ),
+        rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-card-body {
+      padding: 18px 20px 22px;
+    }
+
+    .hero-card-title {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero-card-copy {
+      color: var(--muted);
+      font-size: 0.97rem;
+      line-height: 1.55;
+    }
+
+    /* General sections */
+
+    section {
+      margin-top: 66px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-kicker {
+      margin-bottom: 9px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -0.025em;
+    }
+
+    .section-copy {
+      max-width: 790px;
+      margin: 0 0 20px;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .panel {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: var(--panel-2);
+      box-shadow: var(--shadow);
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin: 0 0 11px;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+    }
+
+    .kicker {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.81rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Book cards */
+
+    .book-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 20px;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--panel-2);
+      box-shadow: var(--shadow);
+    }
+
+    .book-card img {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .book-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.35rem;
+    }
+
+    .book-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .status {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Projects */
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      min-height: 270px;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background: linear-gradient(
+        180deg,
+        transparent,
+        rgba(0, 0, 0, 0.26)
+      );
+    }
+
+    .project-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-card .btn {
+      margin-top: 18px;
+    }
+
+    /* Author and contact */
+
+    .author {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .author-highlight {
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(57, 198, 255, 0.16),
+          transparent 35%
+        ),
+        var(--panel-2);
+    }
+
+    .bullet-list {
+      margin: 15px 0 0;
+      padding-left: 19px;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .bullet-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--muted);
+    }
+
+    .contact-chip:hover {
+      color: var(--text);
+      border-color: rgba(57, 198, 255, 0.45);
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 66px;
+      padding-top: 25px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    /* Responsive layout */
+
+    @media (max-width: 980px) {
+      .hero,
+      .author,
+      .two-col,
+      .grid,
+      .project-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 620px;
+        justify-self: stretch;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .book-card {
+        grid-template-columns: 1fr;
+      }
+
+      .book-card img {
+        max-width: 220px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 20px 16px 48px;
+      }
+
+      .hero {
+        gap: 30px;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero-hook {
+        font-size: 1.1rem !important;
+      }
+
+      .panel {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Rix Interactive home">
+        <span class="brand-name">Rix Interactive</span>
+        <span class="brand-sub">
+          Story, systems, and intelligent design
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#books">Books</a>
+        <a href="awakening-ley-lines.html">Awakening Ley Lines</a>
+        <a href="#projects">Projects</a>
+        <a href="#author">J. C. Rix</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+
+      <section class="hero">
+        <div>
+          <div class="eyebrow">Now Available</div>
+
+          <h1>
+            Awakening
+            <span class="hero-title-small">Ley Lines</span>
+          </h1>
+
+          <p class="hero-hook">
+            An ancient vault. A forgotten civilization. A discovery
+            that will reshape humanity forever.
+          </p>
+
+          <p>
+            J. C. Rix's debut novel blends epic fantasy and science
+            fiction in a story of hidden power, impossible survival,
+            ancient mysteries, and the choices that determine what
+            humanity becomes next.
+          </p>
+
+          <div class="tag-row" aria-label="Book genres">
+            <span class="tag">Science Fantasy</span>
+            <span class="tag">Epic Adventure</span>
+            <span class="tag">Ancient Mysteries</span>
+            <span class="tag">Hidden Civilizations</span>
+          </div>
+
+          <div class="cta-row">
+            <a
+              class="btn btn-primary"
+              href="https://www.amazon.com/dp/B0HB18STLB"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read on Amazon →
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="awakening-ley-lines.html"
+            >
+              Explore the Book
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-cover-wrap">
+            <img
+              src="AwakeningLeyLines.png"
+              alt="Awakening Ley Lines by J. C. Rix book cover"
+            />
+          </div>
+
+          <div class="hero-card-body">
+            <div class="hero-card-title">
+              Featured Release
+            </div>
+
+            <div class="hero-card-copy">
+              <strong>Awakening Ley Lines</strong><br />
+              Available in Kindle Unlimited, Kindle, and paperback.
+            </div>
+          </div>
+        </div>
+      </section>
+
+            <section id="books">
+        <div class="section-kicker">Books by J. C. Rix</div>
+
+        <h2 class="section-title">
+          Worlds built to be explored
+        </h2>
+
+        <p class="section-copy">
+          Rix Interactive is the home of original fiction,
+          interactive concepts, and systems-driven storytelling
+          created by J. C. Rix.
+        </p>
+
+        <div class="two-col">
+
+          <article class="book-card">
+            <img
+              src="AwakeningLeyLines.png"
+              alt="Awakening Ley Lines cover"
+            />
+
+            <div>
+              <span class="status">Published</span>
+
+              <h3>Awakening Ley Lines</h3>
+
+              <p>
+                Beneath the ice lies an ancient vault.
+                Richard Graye's discovery opens a path into
+                forgotten history, extraordinary power, and a
+                future humanity may not be ready to face.
+              </p>
+
+              <div class="cta-row">
+                <a
+                  class="btn btn-primary"
+                  href="awakening-ley-lines.html"
+                >
+                  Book Page
+                </a>
+
+                <a
+                  class="btn btn-secondary"
+                  href="https://www.amazon.com/dp/B0HB18STLB"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Amazon
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="book-card">
+            <img
+              src="cover.png"
+              alt="Chronicles: The Learning Rift cover"
+              onerror="this.style.display='none';"
+            />
+
+            <div>
+              <span class="status">In Development</span>
+
+              <h3>Chronicles: The Learning Rift</h3>
+
+              <p>
+                A grounded science-fiction story about system
+                failure, recovery, and survival in a world where
+                the infrastructure supporting civilization begins
+                to unravel.
+              </p>
+
+              <div class="cta-row">
+                <a
+                  class="btn btn-secondary"
+                  href="#chronicles"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+
+      <section id="projects">
+        <div class="section-kicker">
+          Rix Interactive
+        </div>
+
+        <h2 class="section-title">
+          Books, intelligent systems, and interactive worlds
+        </h2>
+
+        <p class="section-copy">
+          Each project stands on its own, but they share a common
+          foundation: systems matter, understanding matters, and
+          the choices made inside complex environments shape what
+          follows.
+        </p>
+
+        <div class="project-list">
+
+          <article class="panel project-card">
+            <div class="kicker">
+              Published Fiction
+            </div>
+
+            <h3>Awakening Ley Lines</h3>
+
+            <p>
+              Science and mythology collide as an ancient
+              discovery begins changing what humanity understands
+              about its origins and its place in the universe.
+            </p>
+
+            <a
+              class="btn btn-secondary"
+              href="awakening-ley-lines.html"
+            >
+              Enter the World
+            </a>
+          </article>
+
+
+          <article
+            class="panel project-card"
+            id="chronicles"
+          >
+            <div class="kicker">
+              Story + Interactive Experience
+            </div>
+
+            <h3>Chronicles: The Learning Rift</h3>
+
+            <p>
+              A systems-driven science-fiction universe exploring
+              collapse, restoration, adaptation, and learning how
+              to think when everything is breaking.
+            </p>
+
+            <ul class="bullet-list">
+              <li>Novel and game universe</li>
+              <li>Incident-driven decision making</li>
+              <li>Interactive development in progress</li>
+            </ul>
+          </article>
+
+
+          <article class="panel project-card">
+            <div class="kicker">
+              Cognitive Architecture
+            </div>
+
+            <h3>LYRA</h3>
+
+            <p>
+              A constitutional cognitive architecture exploring
+              identity, understanding, reflection, wisdom,
+              stewardship, and long-term human flourishing.
+            </p>
+
+            <ul class="bullet-list">
+              <li>Foundation and governance model</li>
+              <li>Cognitive and experience architecture</li>
+              <li>Long-term AI companion design</li>
+            </ul>
+          </article>
+
+        </div>
+      </section>
+
+
+      <section id="author">
+        <div class="section-kicker">
+          The Creator
+        </div>
+
+        <h2 class="section-title">
+          Meet J. C. Rix
+        </h2>
+
+        <div class="author">
+
+          <div class="panel author-highlight">
+            <h3>
+              Author. Technology architect. World builder.
+            </h3>
+
+            <p>
+              J. C. Rix writes stories where science, mythology,
+              history, and imagination collide. His work is shaped
+              by a career designing complex systems and a lifelong
+              interest in understanding how people, technologies,
+              and civilizations respond to extraordinary change.
+            </p>
+          </div>
+
+
+          <div class="panel">
+            <div class="kicker">
+              Current Work
+            </div>
+
+            <p>
+              He is the author of
+              <strong>Awakening Ley Lines</strong>,
+              creator of
+              <strong>Chronicles: The Learning Rift</strong>,
+              and architect of the
+              <strong>LYRA</strong>
+              cognitive system.
+            </p>
+
+            <ul class="bullet-list">
+              <li>Science fantasy and speculative fiction</li>
+              <li>Systems-driven storytelling</li>
+              <li>Cognitive architecture and AI design</li>
+              <li>Interactive learning experiences</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+            <section id="contact">
+        <div class="section-kicker">
+          Connect
+        </div>
+
+        <h2 class="section-title">
+          Follow the journey
+        </h2>
+
+        <p class="section-copy">
+          Follow J. C. Rix for book news, character reveals,
+          world-building, artwork, project updates, and future
+          releases.
+        </p>
+
+        <div class="contact-row">
+          <a
+            class="contact-chip"
+            href="https://www.instagram.com/jcrixauthor/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a
+            class="contact-chip"
+            href="https://www.amazon.com/dp/B0HB18STLB"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon
+          </a>
+
+          <a
+            class="contact-chip"
+            href="mailto:jcrixauthor@gmail.com"
+          >
+            jcrixauthor@gmail.com
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>
+        © 2026 Rix Interactive
+      </div>
+
+      <div>
+        Created by
+        <span class="accent">J. C. Rix</span>
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
